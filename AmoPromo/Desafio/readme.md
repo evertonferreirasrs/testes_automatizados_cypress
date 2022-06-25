@@ -28,7 +28,8 @@ Caso queira executar os testes visualizando a interface gráfica, execute:
 npx cypress open
 ```
 ```
-### Informações
+## Informações
+
 Após clonar o repositório, deverá alterar as informações no arquivo cypress.env.json com os dados necessários para teste
 
 dados:
