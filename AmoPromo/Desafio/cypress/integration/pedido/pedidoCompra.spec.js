@@ -31,11 +31,11 @@ describe('Geração de pedido', () => {
         //Pegas todas opções de select e pegar o comprimento das opções
         cy.regiao();
 
-        //cy.get('.finish-payment').click();
+        cy.get('.finish-payment').click();
 
-        //cy.wait(50000);
+        cy.wait(50000);
 
-        //cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
+        cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
 
     });
 
@@ -100,11 +100,11 @@ describe('Geração de pedido', () => {
         //Pegas todas opções de select e pegar o comprimento das opções
         cy.regiao();
 
-        //cy.get('.finish-payment').click();
+        cy.get('.finish-payment').click();
 
-        //cy.wait(50000);
+        cy.wait(50000);
 
-        //cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
+        cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
     });
 
     it('Pedido de compra já realizado por cartão de crédito', () => {
@@ -168,7 +168,11 @@ describe('Geração de pedido', () => {
         //Pegas todas opções de select e pegar o comprimento das opções
         cy.regiao();
 
-        //cy.get('.finish-payment').click();
+        cy.get('.finish-payment').click();
+        
+        cy.wait(50000);
+
+        cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
 
     });
 
@@ -195,11 +199,11 @@ describe('Geração de pedido', () => {
         //Pegas todas opções de select e pegar o comprimento das opções
         cy.regiao();
 
-        //cy.get('.finish-payment').click();
+        cy.get('.finish-payment').click();
 
-        //cy.wait(50000);
+        cy.wait(50000);
 
-        //cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
+        cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
 
     });
 
@@ -226,11 +230,11 @@ describe('Geração de pedido', () => {
         //Pegas todas opções de select e pegar o comprimento das opções
         cy.regiao();
 
-        //cy.get('.finish-payment').click();
+        cy.get('.finish-payment').click();
 
-        //cy.wait(50000);
+        cy.wait(50000);
 
-        //cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
+        cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
 
     });
 
@@ -263,11 +267,11 @@ describe('Geração de pedido', () => {
         //Pegas todas opções de select e pegar o comprimento das opções
         cy.regiao();
 
-        //cy.get('.finish-payment').click();
+        cy.get('.finish-payment').click();
 
-        //cy.wait(50000);
+        cy.wait(50000);
 
-        //cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
+        cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
     });
 
     it('Insersão de cupom de desconto PIX', () => {
@@ -301,11 +305,11 @@ describe('Geração de pedido', () => {
 
         cy.contains('b', 'Erro: Cupom Inválido ou expirado').should('be.visible');
 
-        //cy.get('.finish-payment').click();
+        cy.get('.finish-payment').click();
 
-        //cy.wait(50000);
+        cy.wait(50000);
 
-        //cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
+        cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
 
     });
 
@@ -337,11 +341,11 @@ describe('Geração de pedido', () => {
 
         cy.contains('b', 'Erro: Cupom Inválido ou expirado').should('be.visible');
 
-        //cy.get('.finish-payment').click();
+        cy.get('.finish-payment').click();
 
-        //cy.wait(50000);
+        cy.wait(50000);
 
-        //cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
+        cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
     });
 
     it('Insersão de cupom de desconto com Transferência', () => {
@@ -372,11 +376,11 @@ describe('Geração de pedido', () => {
 
         cy.contains('b', 'Erro: Cupom Inválido ou expirado').should('be.visible');
 
-        //cy.get('.finish-payment').click();
+        cy.get('.finish-payment').click();
 
-        //cy.wait(50000);
+        cy.wait(50000);
 
-        //cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
+        cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
 
     });
 
@@ -414,10 +418,10 @@ describe('Geração de pedido', () => {
 
         cy.contains('b', 'Erro: Cupom Inválido ou expirado').should('be.visible');
 
-        //cy.get('.finish-payment').click();
+        cy.get('.finish-payment').click();
 
-        //cy.wait(50000);
+        cy.wait(50000);
 
-        //cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
+        cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
     });
 });
