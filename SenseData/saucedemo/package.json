@@ -1,0 +1,14 @@
+{
+  "name": "teste-sensedata",
+  "version": "1.0.0",
+  "description": "teste",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "author": "Everton Ap. Ferreira",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "9.7"
+  }
+}
