@@ -35,22 +35,45 @@ Após clonar o repositório, deverá alterar as informações no arquivo cypress
 
 dados:
 ```
-    "nome": "xxxx", 
-    "dataAniversario": xxxxxxxx,
-    "CPF": xxxxxxxxxxx,
-    "email": "teste@teste.com",
-    "telefone": xxxxxxxxxxx,
-    "CEP": xxxxxxxx,
-    "endereco": "xxxxxxxx",
-    "numero": xx,
-    "complemento": "xxxxx",
-    "bairro": "xxxxx",
-    "cidade": "xxxxxxxxxx",
-    "numeroCartao": xxxxxxxxxxxxxxx,
-    "nomeCartao": "xxxx",
-    "CPFCartao": xxxxxxxxxxx,
-    "mesCartao": "xx",
-    "anoCartao": "xxxx",
-    "CVVCartao": xxx,
-    "cupom": "xxxxxxxxx"
+    "nome": "José Duarte", 
+    "dataAniversario": 19041990,
+    "CPF": 22895645167,
+    "email": "joses@teste.com",
+    "telefone": 35123456789,
+    "CEP": 37540000,
+    "endereco": "R: Jose Duarte",
+    "numero": 192,
+    "complemento": "casa",
+    "bairro": "Juquita",
+    "cidade": "Santa Rita do Sapucai",
+
+    "nomeCartao": "José Duarte",
+    "CPFCartao": 22895645167,
+
+    "numeroCartaoAmericanExpress": 4012001037141112,    
+    "mesCartaoAmericanExpress": "12",
+    "anoCartaoAmericanExpress": "2022",
+    "CVVCartaoAmericanExpress": 123,
+
+    "numeroCartaoVisa": 4012001037141112,    
+    "mesCartaoVisa": "12",
+    "anoCartaoVisa": "2022",
+    "CVVCartaoVisa": 123,
+
+    "numeroCartaoMasterCard": 4012001037141112,    
+    "mesCartaoMasterCard": "12",
+    "anoCartaoMasterCard": "2022",
+    "CVVCartaoMasterCard": 123,
+
+    "numeroCartaoElo": 4012001037141112,    
+    "mesCartaoElo": "12",
+    "anoCartaoElo": "2022",
+    "CVVCartaoElo": 123,
+
+    "numeroCartaoDiners": 4012001037141112,    
+    "mesCartaoDiners": "12",
+    "anoCartaoDiners": "2022",
+    "CVVCartaoDiners": 123,
+
+    "cupom": "AMOPROMO"
 
