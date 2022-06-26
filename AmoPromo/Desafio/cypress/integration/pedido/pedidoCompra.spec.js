@@ -470,7 +470,7 @@ describe('Geração de pedido', () => {
 
     });
 
-    it('Pedido já com ultimo produto listado na tela de pesquisa com PIX', () => {
+    it('Pedido de compra já realizado com ultimo produto listado na tela de pesquisa com PIX', () => {
 
         //selecionar seguro ultimo produto
         cy.selecionarUltimoProduto();
@@ -535,7 +535,7 @@ describe('Geração de pedido', () => {
 
     });
 
-    it('Pedido já com ultimo produto listado na tela de pesquisa com Boleto', () => {
+    it('Pedido de compra já realizado com ultimo produto listado na tela de pesquisa com Boleto', () => {
 
         //selecionar seguro ultimo produto
         cy.selecionarUltimoProduto();
@@ -597,7 +597,7 @@ describe('Geração de pedido', () => {
 
     });
 
-    it('Pedido já com ultimo produto listado na tela de pesquisa com Transferência', () => {
+    it('Pedido de compra já realizado com ultimo produto listado na tela de pesquisa com Transferência', () => {
 
         //selecionar seguro ultimo produto
         cy.selecionarUltimoProduto();
@@ -664,7 +664,7 @@ describe('Geração de pedido', () => {
         cy.contains('h1', 'Pedido recebido com sucesso!').should('be.visible');
     });
     
-    it('Pedido já com ultimo produto listado na tela de pesquisa com cartão de crédito', () => {
+    it('Pedido de compra já realizado com ultimo produto listado na tela de pesquisa com cartão de crédito', () => {
 
         //selecionar seguro ultimo produto
         cy.selecionarUltimoProduto();
