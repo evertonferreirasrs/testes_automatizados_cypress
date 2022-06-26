@@ -25,12 +25,12 @@ Cypress.Commands.add('regiao', () => {
     cy.get('.selectstate').select('Minas Gerais');
 })
 
-Cypress.Commands.add('dadosCartao', (numeroCartao, nomeCartao, CPFCartao, CVVCartao) => {
+Cypress.Commands.add('dadosCartao', (numeroCartao, nomeCartao, CPFCartao, mesCartao, anoCartao, CVVCartao) => {
     cy.get('#cc-number').type(numeroCartao);
     cy.get('#cc-holder-name').type(nomeCartao);
     cy.get('#cc-holder-cpf').type(CPFCartao);
-    cy.get('#cc-expiry-month').select(Cypress.env('mesCartao'));
-    cy.get('#cc-expiry-year').select(Cypress.env('anoCartao'));
+    cy.get('#cc-expiry-month').select((mesCartao));
+    cy.get('#cc-expiry-year').select((anoCartao));
     cy.get('#cc-verfication-code').type(CVVCartao);
 })
 
@@ -57,8 +57,24 @@ Cypress.Commands.add('selecionarCartaoCredito', () => {
     cy.get(':nth-child(3) > .text-method-payment > label > h4').click();
 })
 
-Cypress.Commands.add('selecionarBandeira', () => {
+Cypress.Commands.add('selecionarBandeiraAmericanExpress', () => {
+    cy.get('.lista-cartoes > :nth-child(1) > label').click();
+})
+
+Cypress.Commands.add('selecionarBandeiraVisa', () => {
     cy.get('.lista-cartoes > :nth-child(2) > label').click();
+})
+
+Cypress.Commands.add('selecionarBandeiraMasterCard', () => {
+    cy.get('.lista-cartoes > :nth-child(3) > label').click();
+})
+
+Cypress.Commands.add('selecionarBandeiraElo', () => {
+    cy.get('.lista-cartoes > :nth-child(4) > label').click();
+})
+
+Cypress.Commands.add('selecionarBandeiraDiners', () => {
+    cy.get('.lista-cartoes > :nth-child(5) > label').click();
 })
 
 Cypress.Commands.add('selecionarSeguro', () => {

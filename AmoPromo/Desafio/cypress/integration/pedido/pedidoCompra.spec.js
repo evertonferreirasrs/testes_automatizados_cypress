@@ -31,11 +31,11 @@ describe('Geração de pedido', () => {
         //Pegas todas opções de select e pegar o comprimento das opções
         cy.regiao();
 
-        cy.get('.finish-payment').click();
+        //cy.get('.finish-payment').click();
 
-        cy.wait(50000);
+        //cy.wait(50000);
 
-        cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
+        //cy.contains('h1', 'Pedido recebido com sucesso!').should('be.visible');
 
     });
 
@@ -71,7 +71,7 @@ describe('Geração de pedido', () => {
         cy.get('.close-btn').click();
     });
 
-    it('Gerar pedido com pagamento cartão de crédito', () => {
+    it('Gerar pedido com pagamento cartão de crédito American Express', () => {
 
         //selecionar seguro
         cy.selecionarSeguro();
@@ -88,10 +88,11 @@ describe('Geração de pedido', () => {
         cy.selecionarCartaoCredito();
 
         //selecionar bandeira
-        cy.selecionarBandeira();
+        cy.selecionarBandeiraAmericanExpress();
 
-        //dados cartão de crédito
-        cy.dadosCartao(Cypress.env('numeroCartao'), Cypress.env('nomeCartao'), Cypress.env('CPFCartao'), Cypress.env('CVVCartao'));
+        //dados cartão de crédito 
+        cy.dadosCartao(Cypress.env('numeroCartaoAmericanExpress'), Cypress.env('nomeCartao'), Cypress.env('CPFCartao'), Cypress.env('mesCartaoAmericanExpress'),
+            Cypress.env('anoCartaoAmericanExpress'), Cypress.env('CVVCartaoAmericanExpress'));
 
         //dados do contato da compra
         cy.dadosContato(Cypress.env('nome'), Cypress.env('email'), Cypress.env('telefone'), Cypress.env('CEP'), Cypress.env('endereco'), Cypress.env('numero'),
@@ -100,14 +101,14 @@ describe('Geração de pedido', () => {
         //Pegas todas opções de select e pegar o comprimento das opções
         cy.regiao();
 
-        cy.get('.finish-payment').click();
+        //cy.get('.finish-payment').click();
 
-        cy.wait(50000);
+        //cy.wait(50000);
 
-        cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
+        //cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
     });
 
-    it('Pedido de compra já realizado por cartão de crédito', () => {
+    it('Pedido de compra já realizado por cartão de crédito Americam Express', () => {
         //selecionar seguro
         cy.selecionarSeguro();
 
@@ -123,10 +124,11 @@ describe('Geração de pedido', () => {
         cy.selecionarCartaoCredito();
 
         //selecionar bandeira
-        cy.selecionarBandeira();
+        cy.selecionarBandeiraAmericanExpress();
 
         //dados cartão de crédito
-        cy.dadosCartao(Cypress.env('numeroCartao'), Cypress.env('nomeCartao'), Cypress.env('CPFCartao'), Cypress.env('CVVCartao'));
+        cy.dadosCartao(Cypress.env('numeroCartaoAmericanExpress'), Cypress.env('nomeCartao'), Cypress.env('CPFCartao'), Cypress.env('mesCartaoAmericanExpress'),
+            Cypress.env('anoCartaoAmericanExpress'), Cypress.env('CVVCartaoAmericanExpress'));
 
         //dados do contato da compra
         cy.dadosContato(Cypress.env('nome'), Cypress.env('email'), Cypress.env('telefone'), Cypress.env('CEP'), Cypress.env('endereco'), Cypress.env('numero'),
@@ -135,12 +137,304 @@ describe('Geração de pedido', () => {
         //Pegas todas opções de select e pegar o comprimento das opções
         cy.regiao();
 
-        cy.get('.finish-payment').click();
+        //cy.get('.finish-payment').click();
 
-        cy.contains('Pedido duplicado:').should('be.visible');
+        //cy.contains('Pedido duplicado:').should('be.visible');
 
-        cy.get('.close-btn').click();
+        //cy.get('.close-btn').click();
     });
+
+    it('Gerar pedido com pagamento cartão de crédito Visa', () => {
+
+        //selecionar seguro
+        cy.selecionarSeguro();
+
+        cy.contains('span', 'Identificação dos').should('be.visible');
+
+        //fechando as propagandas
+        cy.fecharPropaganda();
+
+        //identificação dos seguros
+        cy.idenficicacaoSeguros(Cypress.env('nome'), Cypress.env('dataAniversario'), Cypress.env('CPF'));
+
+        //selecionar cartão de crédito
+        cy.selecionarCartaoCredito();
+
+        //selecionar bandeira
+        cy.selecionarBandeiraVisa();
+
+        //dados cartão de crédito
+        cy.dadosCartao(Cypress.env('numeroCartaoVisa'), Cypress.env('nomeCartao'), Cypress.env('CPFCartao'), Cypress.env('mesCartaoVisa'),
+            Cypress.env('anoCartaoVisa'), Cypress.env('CVVCartaoVisa'));
+
+        //dados do contato da compra
+        cy.dadosContato(Cypress.env('nome'), Cypress.env('email'), Cypress.env('telefone'), Cypress.env('CEP'), Cypress.env('endereco'), Cypress.env('numero'),
+            Cypress.env('complemento'), Cypress.env('bairro'), Cypress.env('cidade'));
+
+        //Pegas todas opções de select e pegar o comprimento das opções
+        cy.regiao();
+
+        //cy.get('.finish-payment').click();
+
+        //cy.wait(50000);
+
+        //cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
+    });
+
+    it('Pedido de compra já realizado por cartão de crédito Visa', () => {
+        //selecionar seguro
+        cy.selecionarSeguro();
+
+        cy.contains('span', 'Identificação dos').should('be.visible');
+
+        //fechando as propagandas
+        cy.fecharPropaganda();
+
+        //identificação dos seguros
+        cy.idenficicacaoSeguros(Cypress.env('nome'), Cypress.env('dataAniversario'), Cypress.env('CPF'));
+
+        //selecionar cartão de crédito
+        cy.selecionarCartaoCredito();
+
+        //selecionar bandeira
+        cy.selecionarBandeiraVisa();
+
+        //dados cartão de crédito
+        cy.dadosCartao(Cypress.env('numeroCartaoVisa'), Cypress.env('nomeCartao'), Cypress.env('CPFCartao'), Cypress.env('mesCartaoVisa'),
+            Cypress.env('anoCartaoVisa'), Cypress.env('CVVCartaoVisa'));
+
+        //dados do contato da compra
+        cy.dadosContato(Cypress.env('nome'), Cypress.env('email'), Cypress.env('telefone'), Cypress.env('CEP'), Cypress.env('endereco'), Cypress.env('numero'),
+            Cypress.env('complemento'), Cypress.env('bairro'), Cypress.env('cidade'));
+
+        //Pegas todas opções de select e pegar o comprimento das opções
+        cy.regiao();
+
+        //cy.get('.finish-payment').click();
+
+        //cy.contains('Pedido duplicado:').should('be.visible');
+
+        //cy.get('.close-btn').click();
+    });
+
+    it('Gerar pedido com pagamento cartão de crédito Master Card', () => {
+
+        //selecionar seguro
+        cy.selecionarSeguro();
+
+        cy.contains('span', 'Identificação dos').should('be.visible');
+
+        //fechando as propagandas
+        cy.fecharPropaganda();
+
+        //identificação dos seguros
+        cy.idenficicacaoSeguros(Cypress.env('nome'), Cypress.env('dataAniversario'), Cypress.env('CPF'));
+
+        //selecionar cartão de crédito
+        cy.selecionarCartaoCredito();
+
+        //selecionar bandeira
+        cy.selecionarBandeiraMasterCard();
+
+        //dados cartão de crédito
+        cy.dadosCartao(Cypress.env('numeroCartaoMasterCard'), Cypress.env('nomeCartao'), Cypress.env('CPFCartao'), Cypress.env('mesCartaoMasterCard'),
+            Cypress.env('anoCartaoMasterCard'), Cypress.env('CVVCartaoMasterCard'));
+
+        //dados do contato da compra
+        cy.dadosContato(Cypress.env('nome'), Cypress.env('email'), Cypress.env('telefone'), Cypress.env('CEP'), Cypress.env('endereco'), Cypress.env('numero'),
+            Cypress.env('complemento'), Cypress.env('bairro'), Cypress.env('cidade'));
+
+        //Pegas todas opções de select e pegar o comprimento das opções
+        cy.regiao();
+
+        //cy.get('.finish-payment').click();
+
+        //cy.wait(50000);
+
+        //cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
+    });
+
+    it('Pedido de compra já realizado por cartão de crédito Master Card', () => {
+        //selecionar seguro
+        cy.selecionarSeguro();
+
+        cy.contains('span', 'Identificação dos').should('be.visible');
+
+        //fechando as propagandas
+        cy.fecharPropaganda();
+
+        //identificação dos seguros
+        cy.idenficicacaoSeguros(Cypress.env('nome'), Cypress.env('dataAniversario'), Cypress.env('CPF'));
+
+        //selecionar cartão de crédito
+        cy.selecionarCartaoCredito();
+
+        //selecionar bandeira
+        cy.selecionarBandeiraMasterCard();
+
+        //dados cartão de crédito
+        cy.dadosCartao(Cypress.env('numeroCartaoMasterCard'), Cypress.env('nomeCartao'), Cypress.env('CPFCartao'), Cypress.env('mesCartaoMasterCard'),
+            Cypress.env('anoCartaoMasterCard'), Cypress.env('CVVCartaoMasterCard'));
+
+        //dados do contato da compra
+        cy.dadosContato(Cypress.env('nome'), Cypress.env('email'), Cypress.env('telefone'), Cypress.env('CEP'), Cypress.env('endereco'), Cypress.env('numero'),
+            Cypress.env('complemento'), Cypress.env('bairro'), Cypress.env('cidade'));
+
+        //Pegas todas opções de select e pegar o comprimento das opções
+        cy.regiao();
+
+        //cy.get('.finish-payment').click();
+
+        //cy.contains('Pedido duplicado:').should('be.visible');
+
+        //cy.get('.close-btn').click();
+    })
+
+    it('Gerar pedido com pagamento cartão de crédito Elo', () => {
+
+        //selecionar seguro
+        cy.selecionarSeguro();
+
+        cy.contains('span', 'Identificação dos').should('be.visible');
+
+        //fechando as propagandas
+        cy.fecharPropaganda();
+
+        //identificação dos seguros
+        cy.idenficicacaoSeguros(Cypress.env('nome'), Cypress.env('dataAniversario'), Cypress.env('CPF'));
+
+        //selecionar cartão de crédito
+        cy.selecionarCartaoCredito();
+
+        //selecionar bandeira
+        cy.selecionarBandeiraElo();
+
+        //dados cartão de crédito
+        cy.dadosCartao(Cypress.env('numeroCartaoElo'), Cypress.env('nomeCartao'), Cypress.env('CPFCartao'), Cypress.env('mesCartaoElo'),
+            Cypress.env('anoCartaoElo'), Cypress.env('CVVCartaoElo'));
+
+        //dados do contato da compra
+        cy.dadosContato(Cypress.env('nome'), Cypress.env('email'), Cypress.env('telefone'), Cypress.env('CEP'), Cypress.env('endereco'), Cypress.env('numero'),
+            Cypress.env('complemento'), Cypress.env('bairro'), Cypress.env('cidade'));
+
+        //Pegas todas opções de select e pegar o comprimento das opções
+        cy.regiao();
+
+        //cy.get('.finish-payment').click();
+
+        //cy.wait(50000);
+
+        //cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
+    });
+
+    it('Pedido de compra já realizado por cartão de crédito Elo', () => {
+        //selecionar seguro
+        cy.selecionarSeguro();
+
+        cy.contains('span', 'Identificação dos').should('be.visible');
+
+        //fechando as propagandas
+        cy.fecharPropaganda();
+
+        //identificação dos seguros
+        cy.idenficicacaoSeguros(Cypress.env('nome'), Cypress.env('dataAniversario'), Cypress.env('CPF'));
+
+        //selecionar cartão de crédito
+        cy.selecionarCartaoCredito();
+
+        //selecionar bandeira
+        cy.selecionarBandeiraElo();
+
+        //dados cartão de crédito
+        cy.dadosCartao(Cypress.env('numeroCartaoElo'), Cypress.env('nomeCartao'), Cypress.env('CPFCartao'), Cypress.env('mesCartaoElo'),
+            Cypress.env('anoCartaoElo'), Cypress.env('CVVCartaoElo'));
+
+        //dados do contato da compra
+        cy.dadosContato(Cypress.env('nome'), Cypress.env('email'), Cypress.env('telefone'), Cypress.env('CEP'), Cypress.env('endereco'), Cypress.env('numero'),
+            Cypress.env('complemento'), Cypress.env('bairro'), Cypress.env('cidade'));
+
+        //Pegas todas opções de select e pegar o comprimento das opções
+        cy.regiao();
+
+        //cy.get('.finish-payment').click();
+
+        //cy.contains('Pedido duplicado:').should('be.visible');
+
+        //cy.get('.close-btn').click();
+    })
+
+    it('Gerar pedido com pagamento cartão de crédito Diners', () => {
+
+        //selecionar seguro
+        cy.selecionarSeguro();
+
+        cy.contains('span', 'Identificação dos').should('be.visible');
+
+        //fechando as propagandas
+        cy.fecharPropaganda();
+
+        //identificação dos seguros
+        cy.idenficicacaoSeguros(Cypress.env('nome'), Cypress.env('dataAniversario'), Cypress.env('CPF'));
+
+        //selecionar cartão de crédito
+        cy.selecionarCartaoCredito();
+
+        //selecionar bandeira
+        cy.selecionarBandeiraDiners();
+
+        //dados cartão de crédito
+        cy.dadosCartao(Cypress.env('numeroCartaoDiners'), Cypress.env('nomeCartao'), Cypress.env('CPFCartao'), Cypress.env('mesCartaoDiners'),
+            Cypress.env('anoCartaoDiners'), Cypress.env('CVVCartaoDiners'));
+
+        //dados do contato da compra
+        cy.dadosContato(Cypress.env('nome'), Cypress.env('email'), Cypress.env('telefone'), Cypress.env('CEP'), Cypress.env('endereco'), Cypress.env('numero'),
+            Cypress.env('complemento'), Cypress.env('bairro'), Cypress.env('cidade'));
+
+        //Pegas todas opções de select e pegar o comprimento das opções
+        cy.regiao();
+
+        //cy.get('.finish-payment').click();
+
+        //cy.wait(50000);
+
+        //cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
+    });
+
+    it('Pedido de compra já realizado por cartão de crédito Diners', () => {
+        //selecionar seguro
+        cy.selecionarSeguro();
+
+        cy.contains('span', 'Identificação dos').should('be.visible');
+
+        //fechando as propagandas
+        cy.fecharPropaganda();
+
+        //identificação dos seguros
+        cy.idenficicacaoSeguros(Cypress.env('nome'), Cypress.env('dataAniversario'), Cypress.env('CPF'));
+
+        //selecionar cartão de crédito
+        cy.selecionarCartaoCredito();
+
+        //selecionar bandeira
+        cy.selecionarBandeiraDiners();
+
+        //dados cartão de crédito
+        cy.dadosCartao(Cypress.env('numeroCartaoDiners'), Cypress.env('nomeCartao'), Cypress.env('CPFCartao'), Cypress.env('mesCartaoDiners'),
+            Cypress.env('anoCartaoDiners'), Cypress.env('CVVCartaoDiners'));
+
+        //dados do contato da compra
+        cy.dadosContato(Cypress.env('nome'), Cypress.env('email'), Cypress.env('telefone'), Cypress.env('CEP'), Cypress.env('endereco'), Cypress.env('numero'),
+            Cypress.env('complemento'), Cypress.env('bairro'), Cypress.env('cidade'));
+
+        //Pegas todas opções de select e pegar o comprimento das opções
+        cy.regiao();
+
+        //cy.get('.finish-payment').click();
+
+        //cy.contains('Pedido duplicado:').should('be.visible');
+
+        //cy.get('.close-btn').click();
+    })
 
     it('Gerar pedido com ultimo produto listado na tela de pesquisa com PIX', () => {
 
@@ -169,10 +463,10 @@ describe('Geração de pedido', () => {
         cy.regiao();
 
         cy.get('.finish-payment').click();
-        
+
         cy.wait(50000);
 
-        cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
+        cy.contains('h1', 'Pedido recebido com sucesso!').should('be.visible');
 
     });
 
@@ -203,7 +497,7 @@ describe('Geração de pedido', () => {
 
         cy.wait(50000);
 
-        cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
+        cy.contains('h1', 'Pedido recebido com sucesso!').should('be.visible');
 
     });
 
@@ -234,7 +528,7 @@ describe('Geração de pedido', () => {
 
         cy.wait(50000);
 
-        cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
+        cy.contains('h1', 'Pedido recebido com sucesso!').should('be.visible');
 
     });
 
@@ -271,7 +565,7 @@ describe('Geração de pedido', () => {
 
         cy.wait(50000);
 
-        cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
+        cy.contains('h1', 'Pedido recebido com sucesso!').should('be.visible');
     });
 
     it('Insersão de cupom de desconto PIX', () => {
@@ -309,7 +603,7 @@ describe('Geração de pedido', () => {
 
         cy.wait(50000);
 
-        cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
+        cy.contains('h1', 'Pedido recebido com sucesso!').should('be.visible');
 
     });
 
@@ -345,7 +639,7 @@ describe('Geração de pedido', () => {
 
         cy.wait(50000);
 
-        cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
+        cy.contains('h1', 'Pedido recebido com sucesso!').should('be.visible');
     });
 
     it('Insersão de cupom de desconto com Transferência', () => {
@@ -380,7 +674,7 @@ describe('Geração de pedido', () => {
 
         cy.wait(50000);
 
-        cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
+        cy.contains('h1', 'Pedido recebido com sucesso!').should('be.visible');
 
     });
 
@@ -422,6 +716,6 @@ describe('Geração de pedido', () => {
 
         cy.wait(50000);
 
-        cy.contains('h1','Pedido recebido com sucesso!').should('be.visible');
+        cy.contains('h1', 'Pedido recebido com sucesso!').should('be.visible');
     });
 });
