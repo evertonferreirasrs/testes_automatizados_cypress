@@ -31,11 +31,11 @@ describe('Geração de pedido', () => {
         //Pegas todas opções de select e pegar o comprimento das opções
         cy.regiao();
 
-        //cy.get('.finish-payment').click();
+        cy.get('.finish-payment').click();
 
-        //cy.wait(50000);
+        cy.wait(50000);
 
-        //cy.contains('h1', 'Pedido recebido com sucesso!').should('be.visible');
+        cy.contains('h1', 'Pedido recebido com sucesso!').should('be.visible');
 
     });
 
@@ -645,10 +645,11 @@ describe('Geração de pedido', () => {
         cy.selecionarCartaoCredito();
 
         //selecionar bandeira
-        cy.selecionarBandeira();
+        cy.selecionarBandeiraVisa();
 
         //dados cartão de crédito
-        cy.dadosCartao(Cypress.env('numeroCartao'), Cypress.env('nomeCartao'), Cypress.env('CPFCartao'), Cypress.env('CVVCartao'));
+        cy.dadosCartao(Cypress.env('numeroCartaoVisa'), Cypress.env('nomeCartao'), Cypress.env('CPFCartao'), Cypress.env('mesCartaoVisa'),
+            Cypress.env('anoCartaoVisa'), Cypress.env('CVVCartaoVisa'));
 
         //dados do contato da compra
         cy.dadosContato(Cypress.env('nome'), Cypress.env('email'), Cypress.env('telefone'), Cypress.env('CEP'), Cypress.env('endereco'), Cypress.env('numero'),
@@ -681,10 +682,11 @@ describe('Geração de pedido', () => {
         cy.selecionarCartaoCredito();
 
         //selecionar bandeira
-        cy.selecionarBandeira();
+        cy.selecionarBandeiraVisa();
 
         //dados cartão de crédito
-        cy.dadosCartao(Cypress.env('numeroCartao'), Cypress.env('nomeCartao'), Cypress.env('CPFCartao'), Cypress.env('CVVCartao'));
+        cy.dadosCartao(Cypress.env('numeroCartaoVisa'), Cypress.env('nomeCartao'), Cypress.env('CPFCartao'), Cypress.env('mesCartaoVisa'),
+            Cypress.env('anoCartaoVisa'), Cypress.env('CVVCartaoVisa'));
 
         //dados do contato da compra
         cy.dadosContato(Cypress.env('nome'), Cypress.env('email'), Cypress.env('telefone'), Cypress.env('CEP'), Cypress.env('endereco'), Cypress.env('numero'),
@@ -827,10 +829,11 @@ describe('Geração de pedido', () => {
         cy.selecionarCartaoCredito();
 
         //selecionar bandeira
-        cy.selecionarBandeira();
+        cy.selecionarBandeiraVisa();
 
         //dados cartão de crédito
-        cy.dadosCartao(Cypress.env('numeroCartao'), Cypress.env('nomeCartao'), Cypress.env('CPFCartao'), Cypress.env('CVVCartao'));
+        cy.dadosCartao(Cypress.env('numeroCartaoVisa'), Cypress.env('nomeCartao'), Cypress.env('CPFCartao'), Cypress.env('mesCartaoVisa'),
+            Cypress.env('anoCartaoVisa'), Cypress.env('CVVCartaoVisa'));
 
         //dados do contato da compra
         cy.dadosContato(Cypress.env('nome'), Cypress.env('email'), Cypress.env('telefone'), Cypress.env('CEP'), Cypress.env('endereco'), Cypress.env('numero'),
