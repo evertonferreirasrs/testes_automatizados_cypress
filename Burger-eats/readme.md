@@ -29,4 +29,4 @@ npx cypress open
 ```
 Neste projeto será utilizado upload de imagens, para isso é necessário instalar os seguintes pacotes:
 ```
-
+npm install cypress-file-upload --save-dev
