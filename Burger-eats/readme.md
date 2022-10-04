@@ -33,5 +33,7 @@ npm install cypress-file-upload --save-dev
 ```
 npm install --save-dev faker@5.5.3
 ```
+npm install --save-dev faker@5.5.3
+```
 npm install gerador-validador-cpf --save-dev
 ```
