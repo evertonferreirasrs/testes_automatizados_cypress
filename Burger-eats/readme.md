@@ -30,3 +30,12 @@ npx cypress open
 Neste projeto será utilizado upload de imagens, para isso é necessário instalar os seguintes pacotes:
 ```
 npm install cypress-file-upload --save-dev
+```
+Neste projeto será utilizado gerador de nome e email fake, para isso é necessário instalar os seguintes pacotes:
+```
+npm install --save-dev faker@5.5.3
+```
+Neste projeto será utilizado gerador de CPF, para isso é necessário instalar os seguintes pacotes:
+```
+npm install gerador-validador-cpf --save-dev
+```
