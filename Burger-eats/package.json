@@ -1,0 +1,19 @@
+{
+  "name": "buger-eats",
+  "version": "1.0.0",
+  "description": "Buger-Eats app acceptance testing project",
+  "main": "npx cypress open",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Everton",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^10.9.0",
+    "cypress-file-upload": "^5.0.8",
+    "faker": "^5.5.3"
+  },
+  "dependencies": {
+    "gerador-validador-cpf": "^5.0.2"
+  }
+}
