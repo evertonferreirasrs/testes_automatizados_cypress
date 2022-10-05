@@ -11,4 +11,5 @@ module.exports = defineConfig({
   },
   viewportWidth: 1440,
   viewportHeight: 900,
+  projectId: "fx3bwy"
 })
